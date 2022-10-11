@@ -1,0 +1,661 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  background-color: lightslategray;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.video-bg {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  display: flex;
+  width: 95vw;
+  height: 95vh;
+  position: relative;
+  margin: 1rem auto;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(50px);
+  -moz-backdrop-filter: blur(50px);
+  -ms-backdrop-filter: blur(50px);
+  -o-backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 10px;
+}
+
+/* CLOCK START */
+.clock-widget {
+  width: 350px;
+  height: 350px;
+  transform: translateY(10px);
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.clock {
+  position: absolute;
+  opacity: 1;
+  height: 100px;
+}
+
+.fill .clock {
+  left: 50%;
+  top: 35%;
+}
+
+.centre {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.expand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.anchor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.element {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.round {
+  border-radius: 296px;
+}
+
+.circle-1 {
+  background: white;
+  width: 12px;
+  height: 12px;
+}
+
+.circle-2 {
+  background: #FA9F22;
+  width: 8px;
+  height: 8px;
+}
+
+.circle-3 {
+  background: black;
+  width: 4px;
+  height: 4px;
+}
+
+.second {
+  transform: rotate(180deg);
+}
+
+.minute {
+  transform: rotate(54deg);
+}
+
+.second-hand {
+  width: 2px;
+  height: 164px;
+  background: #FA9F22;
+  transform: translate(-50%, -100%) translateY(24px);
+}
+
+.hour {
+  transform: rotate(304.5deg);
+}
+
+.thin-hand {
+  width: 4px;
+  height: 50px;
+  background: white;
+  transform: translate(-50%, -100%);
+}
+
+.fat-hand {
+  width: 10px;
+  height: 57px;
+  border-radius: 10px;
+  background: white;
+  transform: translate(-50%, -100%) translateY(-18px);
+}
+
+.minute-hand {
+  height: 112px;
+}
+
+.hour-text {
+  position: absolute;
+  font: 40px Hei, Helvetica, Arial, sans-serif;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.hour-10 {
+  padding-left: 0.4ex;
+}
+
+.hour-11 {
+  padding-left: 0.25ex;
+}
+
+.minute-text {
+  position: absolute;
+  font: 12px Avenir Next, Helvetica, Arial, sans-serif;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.minute-line {
+  background: white;
+  width: 1px;
+  height: 9px;
+  transform: translate(-50%, -100%) translateY(-131px);
+  opacity: 0.34;
+}
+
+/* CLOCK END */
+.info {
+  width: 1500px;
+  height: 950px;
+  margin-left: 20px;
+}
+
+.news-bar {
+  width: 1825px;
+  height: 65px;
+  position: absolute;
+  bottom: 0;
+}
+.news-bar-section {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  color: black;
+  font-family: helvetica;
+  text-transform: uppercase;
+  overflow-x: hidden;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.news-bar-section div {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  min-width: 100%;
+}
+.news-bar-section div .news-message {
+  display: flex;
+  flex-shrink: 0;
+  height: 65px;
+  align-items: center;
+  -webkit-animation: slide-left 50s linear infinite;
+          animation: slide-left 50s linear infinite;
+}
+.news-bar-section div .news-message p {
+  font-size: 2.5em;
+  font-weight: 100;
+  padding-left: 0.5em;
+}
+.news-bar-section div .news-message .news-breaker {
+  font-size: 45px;
+}
+@-webkit-keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  height: 700px;
+  background-size: cover;
+}
+
+img {
+  transform: translateY(33.5%);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.slider-text {
+  position: absolute;
+  color: #fff;
+  font-size: 65px;
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translateY(100%);
+}
+
+/* SLIDESHOW END */
+/* Weather Widget start */
+.weather {
+  width: 350px;
+  height: 580px;
+  margin-left: 20px;
+}
+
+.card * {
+  position: absolute;
+}
+
+.card {
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+  color: #77c7fc;
+  background-color: #a8dcff;
+  border-radius: 10px;
+  transform: translateY(25%);
+  overflow: hidden;
+}
+
+.card-text {
+  height: 200px;
+  width: 300px;
+  color: #474747;
+  font-weight: bold;
+  font-size: 30px;
+  top: 7%;
+  left: 7%;
+}
+
+.card-text span {
+  display: block;
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+.card-bottom {
+  height: 33%;
+  width: 99.5%;
+  background-color: #77c7fc;
+  bottom: 0;
+  border: 1px solid;
+  border-radius: 0 0 16px 16px;
+}
+
+.week {
+  height: 100%;
+  width: 16.7%;
+}
+
+.week-mon {
+  left: 0;
+}
+
+.week-tue {
+  left: 16.7%;
+}
+
+.week-wed {
+  left: 33.4%;
+}
+
+.week-thu {
+  left: 50.1%;
+}
+
+.week-fri {
+  left: 66.8%;
+}
+
+.week-sat {
+  left: 83.5%;
+}
+
+.cloud {
+  height: 15%;
+  width: 30%;
+  background-color: white;
+  border-radius: 100px;
+  opacity: 0.7;
+}
+
+.cloud::after,
+.cloud::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+}
+
+.cloud:before {
+  border-radius: 50%;
+  width: 40%;
+  height: 100%;
+  right: 15%;
+  top: -55%;
+}
+
+.cloud:after {
+  height: 70%;
+  width: 30%;
+  border-radius: 50%;
+  left: 18%;
+  top: -45%;
+}
+
+.cloud-top {
+  right: 10%;
+  top: 15%;
+  width: 40%;
+  -webkit-animation: rightLeft 10s linear infinite alternate;
+          animation: rightLeft 10s linear infinite alternate;
+}
+
+.cloud-bottom {
+  top: 45%;
+  right: 50%;
+  width: 40%;
+  -webkit-animation: leftRight 10s linear infinite alternate;
+          animation: leftRight 10s linear infinite alternate;
+}
+
+@-webkit-keyframes rightLeft {
+  0% {
+    margin-right: -10%;
+  }
+  100% {
+    margin-right: 60%;
+  }
+}
+
+@keyframes rightLeft {
+  0% {
+    margin-right: -10%;
+  }
+  100% {
+    margin-right: 60%;
+  }
+}
+@-webkit-keyframes leftRight {
+  0% {
+    margin-right: 20%;
+  }
+  100% {
+    margin-right: -50%;
+  }
+}
+@keyframes leftRight {
+  0% {
+    margin-right: 20%;
+  }
+  100% {
+    margin-right: -50%;
+  }
+}
+.sun-icon {
+  height: 10%;
+  width: 15%;
+  border-radius: 50%;
+  background-color: yellow;
+  border: 2px solid yellow;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sun-icon::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 7px;
+  background-color: yellow;
+  top: 50%;
+  left: -100%;
+  transform: translate(0%, -50%);
+}
+
+.sun-icon::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 7px;
+  background-color: yellow;
+  top: 50%;
+  right: -100%;
+  transform: translate(0%, -50%);
+}
+
+.sun-ray {
+  width: 2px;
+  height: 7px;
+  background-color: yellow;
+}
+
+.top {
+  top: -70%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.top-left {
+  top: -35%;
+  left: -50%;
+  transform: translate(50%, -50%) rotate(-45deg);
+}
+
+.top-right {
+  top: -40%;
+  right: -45%;
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.bottom {
+  bottom: -120%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.bottom-left {
+  bottom: -90%;
+  left: -50%;
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.bottom-right {
+  bottom: -90%;
+  right: -45%;
+  transform: translate(50%, -50%) rotate(-45deg);
+}
+
+.cloudy-icon {
+  height: 10%;
+  width: 40%;
+  border-radius: 100px;
+  border: 3px solid white;
+  background-color: white;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.cloudy-icon::before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 40%;
+  border-radius: 50%;
+  background-color: white;
+  border: 3px solid white;
+  top: -20%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.rain1 {
+  height: 15px;
+  width: 3px;
+  background-color: #0047ab;
+  top: 50%;
+  left: 20%;
+  transform: translateX(-50%) rotate(10deg);
+}
+
+.rain2 {
+  height: 20px;
+  width: 3px;
+  background-color: #0047ab;
+  top: 50%;
+  left: 40%;
+  transform: translateX(-50%) rotate(10deg);
+}
+
+.rain3 {
+  height: 15px;
+  width: 3px;
+  background-color: #0047ab;
+  top: 50%;
+  left: 65%;
+  transform: translateX(-50%) rotate(10deg);
+}
+
+.sun {
+  height: 100%;
+  width: 45%;
+  background-color: yellow;
+  border-radius: 50%;
+  top: -110%;
+  right: 0;
+  z-index: -1;
+}
+
+.sun::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 7px;
+  background-color: yellow;
+  top: -30%;
+  left: -10%;
+  transform: translate(0%, -50%) rotate(-45deg);
+}
+
+.sun::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 7px;
+  background-color: yellow;
+  top: -50%;
+  left: 50%;
+  transform: translate(0%, -50%);
+}
+
+.ray1 {
+  width: 2px;
+  height: 7px;
+  background-color: yellow;
+  top: -20%;
+  right: -20%;
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.ray2 {
+  width: 2px;
+  height: 7px;
+  background-color: yellow;
+  top: 45%;
+  right: -50%;
+  transform: translate(50%, -50%) rotate(90deg);
+}
+
+.ray3 {
+  width: 2px;
+  height: 7px;
+  background-color: yellow;
+  top: 110%;
+  right: -30%;
+  transform: translate(50%, -50%) rotate(135deg);
+}
+
+.day {
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #474747;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.degrees {
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #474747;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+small {
+  white-space: nowrap;
+  padding-left: 10px;
+  padding-top: 2.5px;
+}
+
+/* Weather Widget End *//*# sourceMappingURL=index.css.map */
